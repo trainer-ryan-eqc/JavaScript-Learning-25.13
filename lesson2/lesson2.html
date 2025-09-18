@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+<script>
+
+  //----------------------------------------- COMMENTS -----------------------------------------
+
+  // Comments are statements that don't run 
+
+  // Single line comment → ctrl + / OR command + /
+
+  /*
+
+  Multi-line comment
+
+  console.log(chdsbvs) 
+  console.log(chdsbvs) 
+  console.log(chdsbvs) 
+  console.log(chdsbvs) 
+
+  */
+
+
+
+
+
+  //----------------------------------- IDENTIFIERS / NAMES -----------------------------------
+
+  function nameOfFunction() {}
+
+  // A JavaScript 'name' must begin with:
+
+  /*
+ 
+  - A letter (A - Z) or (a - z)
+  - A $
+  - Or an _
+  - Subsequent characters may have letters, digits, underscores, or $
+  - Use camelCase when using multiple words
+
+  ❌ Numbers are not allowed as the first character
+
+  */
+
+
+
+
+
+  //------------------------------ CASE SENSITIVITY & CAMEL CASE ------------------------------
+
+  // All Javascript identifiers are case sensitive
+
+  let myName = "Ryan";
+  let myname = "Borat";
+
+  console.log(myname, myName);
+
+
+  /*
+
+  Reserved / Key words
+
+  ❌ Function // No sentence case
+  ❌ FUNCTION  // No capitals
+  ✅ function  // all lowercase
+
+  */
+
+
+
+
+
+
+ 
+  //-------------------------------------- EXPRESSIONS --------------------------------------
+
+
+  // An expression is a combination of values, variables, and operators, which computes to a value.
+  // The computation is called and 'evaluation'
+
+
+  5 * 10 // = 50           →         5 X 10 evaluates to 50
+
+  let q = 5;
+  q * 10 // 5 * 10 = 50
+
+
+  "Borat" + " " + "Sagdiyev"; 
+  
+
+
+
+
+  // --------------------------------------------------------------------------------------
+  //-------------------------------------- VARIABLES --------------------------------------
+  // --------------------------------------------------------------------------------------
+
+
+
+  // Variables are containers for storing data and re-using. This is to avoid repitition of values. 
+  // Increase readability, and make maintaining code easier
+
+
+
+/* 
+  var - old way to declare variables - can be redeclared and updated - function scoped
+
+  let - modern, flexible way - can be updated but not redeclared in the same scope - block scoped 
+  
+  const - best for values that dont change - cannot be updated or redeclared - block scoped
+
+*/
+
+
+let count = 5;
+count = 6
+count = 10
+
+console.log("Count:", count);
+
+const counter = 5
+// counter = 4;
+
+console.log("Counter:", counter);
+
+
+
+
+//-------------------------------------- Declaring Single values --------------------------------------
+
+
+let fruit = "apple";
+console.log(fruit);
+
+
+
+
+
+
+//-------------------------------------- Declaring multiple values --------------------------------------
+
+// ONLY works with 'let'
+// ❌ const cannot declare multiple empty variable
+
+let a, b, c;
+
+a = 5;
+b = 8;
+c = a + b;
+
+console.log(c);
+
+
+
+
+//-------------------------------------- Using variables in maths --------------------------------------
+
+
+// My age
+const myBirthYear = 1996;
+const currentYear = 2025;
+
+const myAge = currentYear - myBirthYear;
+
+console.log("My age is", myAge);
+
+
+
+// BMI
+const height = 1.68;
+const weight = 68;
+
+const bmi = weight / (height ** 2);
+
+const neatBMI = bmi.toFixed(0);
+
+console.log("Hi, my name is Ryan, and I have a BMI of " + neatBMI);
+
+
+/*
+
+Brackets
+Orders
+Division
+Multiplication
+Addition
+Subtraction
+
+*/
+
+
+
+
+// ACTIVITY → WORK OUT YOUR MAX HEART RATE
+
+/*
+
+Instructions:
+1. Use the formula → 220 - `age`
+2. Store both values in individual variables
+3. Create a 3rd variable which has a value of the formula
+4. Output into a sentence with your name inside the console
+
+*/
+
+
+
+const me = "Borat";
+const age = 64;
+const formulaNumber = 220;
+const MHR = formulaNumber - age;
+
+console.log("Hi, my name is " + me + ". I am " + age + " years old. My max heart rate is " + MHR + "."); // String concatenation → '' OR ""
+
+console.log(`Hi, my name is ${me}. I am ${age} years old. My max heart rate is ${MHR}.`); // String interpolation → ``
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---------------------------------------- Declaring elements as variables ---------------------------------------->
+
+
+<p id="demo">This text will change</p>
+
+<button onclick="displayText()">Click to change</button>
+
+<script>
+  function displayText() {
+    const p = document.getElementById('demo');
+    const message = "Hello, this text has changed!";
+
+    p.textContent = message;
+  }
+</script>
+
+
+
+</body>
+</html>
