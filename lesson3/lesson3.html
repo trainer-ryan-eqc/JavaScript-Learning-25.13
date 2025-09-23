@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <!-- Data Types in JS -->
+
+
+
+  <script>
+
+    // ----------------------------------- STRINGS -----------------------------------
+
+    // A sequence of characters used to represent text → "" OR '' OR ``
+
+    let greeting = "Hello people!"; //text string
+    let fakeCalculation = '100 + 100'; // ONLY text value, not numerical because of the ""
+
+    let quoteExample = "Hello I drive a 'Corolla' down the street";
+
+    let person = "Phillip";
+    let myName = "Bob";
+
+    let sentenceWithData = `Hello ${person}. My name is ${myName}.` // Works with data being parsed into the sentence
+    
+
+
+
+
+    // ----------------------------------- NUMBERS -----------------------------------
+
+
+    let integerExample = 100; // Whole number
+    let floatingPointValue = 100.99 // Floating point value → has decimal places
+
+
+
+
+
+
+    // ----------------------------------- BOOLEANS -----------------------------------
+
+    // Represent `True` or `False` values → commonly used in logic
+
+    let isRaining = false;
+    let hasUmbrella = true;
+
+    console.log("Is it raining today?", isRaining);
+    console.log("Do I have an umbrella?", hasUmbrella);
+
+
+
+
+
+    // ----------------------------------- ARRAYS -----------------------------------
+
+    // A collection of values stored in a single variable
+
+    // Enclosed in square brackets `[ ]` with elements separated by commas.
+
+    let groceries = ["Apples", "Oranges", "Milo"];
+
+    console.log(groceries); // outputs the whole array
+    console.log(groceries[2]); // Output "Milo"
+    console.log(groceries.length); // output "3"
+
+    groceries.push("Bananas", "Ice-cream", "Dog Food", "Castello Blue Cheese", "Steak", "Chicken");   // Add items to the end
+
+    groceries.pop(); // Removes last item in array
+
+    groceries.shift(); // remove the first item in the array
+
+    groceries.splice(1, 2); // Removing items in the array from a certain index (position)
+
+    groceries.splice(4, 0, "Baked Beans", "Weet Bix"); // Adding items in the array from a certain index (position)
+
+    console.log(groceries);
+
+
+
+
+
+
+    // ------------------------------- UNDEFINED & NULL -------------------------------
+
+    // Undefined: variable declared but not assigned a value
+    // Null: Intentional absence of any value. Purposely making the value "blank"
+
+    let notAssigned;  // undefined
+
+    let emptyValue = null; // Null
+
+    console.log("Undefined value:", notAssigned);
+    console.log("Null value:", emptyValue);
+
+
+
+
+
+
+    // ------------------------------- OBJECTS -------------------------------
+
+    // JSON → JavaScript Object Notation
+
+    // Collection of key-value pairs
+
+    // Enclosed in {}
+
+    let trainer = {
+      name: "Ryan",
+      age: 28,
+      car: "Corolla",
+      hobbies: ["soccer", "Watching Russell Coight", "Shopping"]
+    }
+
+
+    console.log("Original output:", trainer);        // outputs the object
+    console.log(trainer.name);  // access a property inside the object
+
+
+    delete trainer.car; // Deleting properties
+
+    trainer.shirt = "Black"; // Adding a new property (. notation)
+    trainer["dog"] = "Chihuahua";  // Adding a new property ([] notation)
+
+    trainer.shirt = "Red"; // Changing values inside the object
+
+    console.log("Updated output:", trainer);
+
+
+
+
+
+    // ------------------------------------ Activity ------------------------------------
+
+    // Goal: Create an object representing yourself with properties like `name`, `age`, `favoriteColor`, and `hobbies`.
+    // Then create an output in the console with all the properties neatly in a sentence.
+    // Send through screenshots when finished 🤙🏼
+
+
+    let myProfile = {
+      name: "Ryan",
+      age: 100,
+      location: "NSW",
+      fav_colours: ["black", "red", "green", "blue"]
+    }
+
+    console.log(`Hello, I'm ${myProfile.name}, and I am ${myProfile.age} years old. I live in ${myProfile.location} and one of my favourite colours is ${myProfile.fav_colours[1]}.`)
+  
+
+  </script>
+
+
+
+
+
+
+</body>
+</html>
