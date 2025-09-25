@@ -11,7 +11,7 @@
 
 
   <script>
-
+    
     // ------------------------------- Symbols & Operators -------------------------------
 
 
@@ -80,11 +80,187 @@
     console.log(x);
 
 
+    
+
+
+
+    // ------------------------------- Comparison Operators -------------------------------
+
+    
+    // Used to compare values and return "True" or "False"
+
+    console.log(10 == "10");  // true (loose equality - compares values only, not data type) 
+    console.log(10 === "10");  // false (strict equality - compares values and data types)
+
+    console.log(5 >= 3); // true - Greater than or equal to
+    console.log(5 > 3); // true - Greater than
+    console.log(5 < 3); // False - Less than
+    console.log(5 <= 3); // False - Less than or equal to
+    
+
+
+
+    // ------------------------------- Logical Operators -------------------------------
+    
+    let hasMoney = false;
+    let isStoreOpen = false;
+
+    console.log("hasMoney AND isStoreOpen?:", hasMoney && isStoreOpen); // AND - false, because one of the values is "false" - both need to be true to return "true"
+    console.log("hasMoney OR isStoreOpen?:", hasMoney || isStoreOpen); // OR - true, because one of the values is "true" - Only one needs to be true to return "true"
+    console.log("isStore NOT Open?:", !isStoreOpen); // NOT - Inverts the true/false value
+
+    console.log(hasMoney ? "Yes you have money" : "No you're a muppet");
+
+
+
+    // ------------------------------------ Examples ------------------------------------
+
+
+    const savings = 2500;
+
+    const computerPrice = 2000;
+
+    const canBuyComputer = savings > computerPrice ? "Yes, buy it!" : "Not yet sorry! Keep saving!";
+
+    console.log("Can the customer buy the computer?", canBuyComputer);
+
+
+    // -----
+
+
+    const customer = {
+      name: "old mate",
+      age: 16,
+      location: "QLD"
+    }
+
+    const legalAge = 18;
+
+    const canBuyAlcohol = customer.age >= legalAge ? "Yes" : "No";
+
+    console.log(`Can ${customer.name} buy Tennessee Whiskey?`, canBuyAlcohol);
+
+
+    // ---------------------------------- Activity 1 ----------------------------------
+
+
+    // Goal: Create a simple checkout system where users enter their budget and the price of an item, then determine if they can afford it.
 
 
 
 
 
+
+    // ---------------------------------- Activity 2 ----------------------------------
+
+
+    /*
+
+    Goal: Check if a customer can purchase a car based on two conditions:
+
+    - They must have a driver’s license.
+    - They must have enough funds.
+
+    */
+    
+
+    const person = {
+      name: "James",
+      bankBalance: 7_000,
+      age: 19,
+      hasLicense: true
+    }
+
+    const carPrice = 5_000;
+
+    const canBuyCar = (person.bankBalance >= carPrice) && (person.hasLicense) ? "Yes, buy the car" : "No, get on your pushy!";
+
+    console.log(`Can ${person.name} purchase the car?`, canBuyCar);
+    
+
+
+    
+
+
+
+    // ------------------------------- FUNCTIONS -------------------------------
+
+
+    // A function is a reusable block of code designed to perform a task.
+
+    /*
+
+    - Avoid repitition
+    - Makes code modular
+    - Improves readablility
+
+    */
+
+
+
+    // Basic function w/o parameters
+    function greet() {
+      console.log("Hello, my name is Ryan");
+    }
+
+
+
+    // Basic function w/o parameters w/ variables
+    function greet() {
+      const name = "Ryan"; // variable
+      console.log("Hello, my name is " + name);
+    }
+
+
+
+
+    // Basic function w/ parameters
+    function addNumbers(a, b) {
+    console.log(a + b);
+    }
+    
+    // addNumbers(50, 200);
+
+
+    
+
+    function greet(name = "User") {              // "User" is default value if no value comes through the function
+      console.log(`Hello, my name is ${name}`);  // Console.log output
+    }
+
+    greet("Bob");
+
+    
   </script>
+
+
+
+
+
+
+  <p id="pTag"></p>
+
+  <button onclick="greet()">Generic Greeting</button>
+  <button onclick="personalGreet()">Personal Greeting</button>
+
+
+  <script>
+    const output = document.getElementById("pTag");
+
+    function greet() {             
+      output.innerHTML = "Hello!";
+    }
+
+
+    function personalGreet() {
+      const name = prompt("What is your name?");
+      output.innerHTML = `Hello ${name}`;
+    }
+  </script>
+
+
+
+
+
 </body>
 </html>
