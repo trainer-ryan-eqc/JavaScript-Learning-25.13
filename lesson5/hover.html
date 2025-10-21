@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  
+
+  <p onmouseover="change(this)" onmouseout="revertChanges(this)">Hover over me!</p>
+
+
+  <script>
+    
+    function change(e) {      
+      e.style.backgroundColor = "blue";
+      e.style.color = "white";
+      e.style.transition = "0.5s";
+      e.textContent = "This has changed"
+    }
+
+
+    function revertChanges(e) {
+      e.style.backgroundColor = "white";
+      e.style.color = "black";
+      e.style.transition = "0.5s";
+      e.textContent = "Hover over me!"
+    }
+  </script>
+
+</body>
+</html>

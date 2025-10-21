@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: transparent;
+      cursor: pointer;
+      color: white;
+    }
+
+    .btn.on {
+      background-color: green;
+    }
+
+    .btn.off {
+      background-color: red;
+    }
+  </style>
+</head>
+<body style="background-color: rgb(224, 224, 224);">
+  
+
+  <img id="light" src="./light-off.svg" alt="Light" height="100px" width="auto">
+  <br><br>
+  <button class="btn off" onclick="onAndOff(document.getElementById('light'), this, document.getElementById('text'))">OFF</button>
+  <br><br>
+  <p id="text"></p>
+
+  <script>
+    function onAndOff(light, btn, text) {
+      if (btn.textContent === "OFF") {
+        btn.textContent = "ON";
+        btn.className = "btn on";
+        light.src = "light-on.svg";
+        text.textContent = "Light has been turned on!";
+      } else {
+        btn.textContent = "OFF";
+        btn.className = "btn off";
+        light.src = "light-off.svg";
+        text.textContent = "Light has been turned off!";
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>

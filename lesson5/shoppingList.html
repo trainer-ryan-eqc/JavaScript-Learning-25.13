@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+</head>
+<body>
+  
+
+
+  <input id="food" type="text" placeholder="Enter Food">
+  <button onclick="addFood()">Add Food</button>
+
+
+
+  <ul id="shoppingList"></ul>
+
+
+  <script>
+    function addFood() {
+      const foodInput = document.getElementById("food").value;
+      const shoppingList = document.getElementById("shoppingList");
+
+      if (foodInput) {
+        const li = document.createElement("li");
+        li.textContent = foodInput;
+        shoppingList.appendChild(li);
+        document.getElementById("food").value = "";
+      }
+      else {
+        return alert("Enter a value!");
+      }
+    }
+
+    // ✅ Function
+    // ✅ Variables
+    // ✅ If Statement
+    // ✅ Return
+    // ✅ Dynamic list creation
+    // ✅ Error Handling
+    // ✅ 'Onclick' Event Handler
+
+  </script>
+
+
+
+</body>
+</html>
