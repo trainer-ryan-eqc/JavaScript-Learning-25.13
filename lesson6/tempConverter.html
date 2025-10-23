@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .inputStyles {
+      color: blue;
+      transition: 0.2s;
+      border-color: transparent;
+      outline: 1px solid #a200ffc9;
+      border-radius: 3px;
+      box-shadow: 0px 0px 5px 0px #a200ffc9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Temperature Converter C° → F° -->
+  <div id="tempCConverter" style="margin-bottom: 100px;">
+    <input id="tempC" onfocus="focusFunction(this)" type="text" placeholder="Enter temperature in C°">
+    <button onclick="convertTemperatureF(document.getElementById('tempC'))">Convert to F°</button>
+    <button onclick="resetAllFields(document.getElementById('tempC'), document.getElementById('outputF'))">Reset</button>
+    <p id="outputF">The temperature is...</p>
+  </div>
+
+
+
+  <!-- Temperature Converter F° → C° -->
+  <div id="tempFConverter">
+    <input id="tempF" onfocus="focusFunction(this)" type="text" placeholder="Enter temperature in F°">
+    <button onclick="convertTemperatureC(document.getElementById('tempF'))">Convert to C°</button>
+    <button onclick="resetAllFields(document.getElementById('tempF'), document.getElementById('outputC'))">Reset</button>
+    <p id="outputC">The temperature is...</p>
+  </div>
+
+
+
+  <script>
+
+    // Function to convert C° → F°
+    function convertTemperatureF(i) {
+      const tempC = document.getElementById("tempC").value.trim();
+      if (!tempC) {
+        return alert("Enter temperature value in C°!");
+      } else if (isNaN(tempC)) {
+          alert("Numbers only please!");
+          document.getElementById("tempC").value = "";
+          return;
+      }
+      const tempF = ((tempC * (9/5)) + 32).toFixed(0);
+      const outputF = document.getElementById("outputF");
+      outputF.style.color = "green";
+      outputF.textContent = `${tempC}C° to Farenheight is ${tempF}F°`;
+      document.getElementById("tempC").value = "";
+      i.blur();
+      exitFocusFunction(i);
+    }
+
+
+
+    // Function to convert F° → C°
+    function convertTemperatureC(i) {
+      const tempF = document.getElementById("tempF").value.trim();
+      if (!tempF) {
+        return alert("Enter temperature in F°!");
+      } else if (isNaN(tempF)) {
+        alert("Numbers only pleas!");
+        document.getElementById("tempF").value = "";
+        return;
+      }
+      const tempC = ((tempF - 32) * (5/9)).toFixed(0);
+      const outputC = document.getElementById("outputC");
+      outputC.style.color = "green";
+      outputC.textContent = `${tempF}F° to Celsius is ${tempC}C°`;
+      document.getElementById("tempF").value = "";
+      i.blur();
+      exitFocusFunction(i);
+    }
+
+
+
+    // Function to reset all fields back to default
+    function resetAllFields(temperature, output) {
+      output.style.color = "black";
+      output.textContent = "The temperature is...";
+      temperature.value = "";
+      exitFocusFunction(temperature);
+    }
+
+
+
+    // Event Listener to reset back to default on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      resetAllFields(document.getElementById('tempF'), document.getElementById('outputC'));
+      resetAllFields(document.getElementById('tempC'), document.getElementById('outputF'))
+    });
+
+
+
+
+    // Listen for enter key being pressed in both converters
+    document.getElementById("tempCConverter").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        convertTemperatureF(document.getElementById('tempC'));
+      }
+    });
+
+    document.getElementById("tempFConverter").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        convertTemperatureC(document.getElementById('tempF'));
+      }
+    });
+
+
+
+    // Makes the input pretty when focused
+    function focusFunction(input) {
+      input.classList.add("inputStyles");
+    }
+
+
+    // Makes the input default when not focused
+    function exitFocusFunction(input) {
+      input.classList.remove("inputStyles");
+    }
+
+
+  </script>
+</body>
+</html>
